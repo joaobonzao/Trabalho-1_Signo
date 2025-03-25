@@ -1,0 +1,140 @@
+/*
+    Autor: João Pedro Cassanego Reichert
+    Data: 25/03/2025
+    Descrição do Trabalho:      
+    Você foi contratado para desenvolver um sistema para a empresa chamada
+"Sei de Tudo", que oferece consultoria de Zodíaco. Seu programa deve solicitar as seguintes informações do usuário:
+nome, sexo, dia, mês e ano de nascimento. Com base nesses dados, o programa calculará a idade do usuário,
+identificará o signo correspondente e apresentará informações personalizadas,
+como o número da sorte e a cor da sorte.
+ */
+package desafiosigno;
+
+import java.text.DecimalFormat;
+import java.util.Calendar;
+import java.util.Scanner;
+
+public class DesafioSigno {
+
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        DecimalFormat decimal = new DecimalFormat("0.00");
+        Calendar hoje = Calendar.getInstance();
+        ///Declarar variáveis///
+
+        String nome, signo;
+        int sexo, diaNasc, mesNasc, anoNasc, diaAtual, mesAtual, anoAtual, idade, numeroSorte, corSorte;
+
+        ///Entrada de dados///
+        //Nome     
+        System.out.println("Insira seu nome:");
+        nome = ler.nextLine();
+        if (nome.length() < 8) {
+            System.out.println("Seu nome não foi informado corretamente");
+            return;
+        }
+        //Sexo   
+        System.out.println("Insira seu sexo (1 para Feminino e 2 para Masculino):");
+        sexo = ler.nextInt();
+        if (sexo < 1) {
+            System.out.println("Invalído");
+        } else if (sexo == 1) {
+            System.out.println("Feminino");
+        } else {
+            System.out.println("Masculino");
+        }
+        //Data   
+        System.out.println("Insira o dia que nasceu:");
+        diaNasc = ler.nextInt();
+        System.out.println("Insira o mês que nasceu:");
+        mesNasc = ler.nextInt();
+        System.out.println("Insira o ano que nasceu:");
+        anoNasc = ler.nextInt();
+        diaAtual = hoje.get(Calendar.DATE);
+        mesAtual = hoje.get(Calendar.MONTH);
+        anoAtual = hoje.get(Calendar.YEAR);
+        idade = (anoAtual - anoNasc);
+        if (diaNasc < 1 || diaNasc > 31) {
+            System.out.println("dia invalido");
+            return;
+        }
+
+        if (anoNasc >= anoAtual || (anoNasc == anoAtual && mesNasc > mesAtual) || anoNasc < 1900) {
+            System.out.println("Data invlída");
+        } else if (mesNasc > mesAtual || (mesNasc == mesAtual && diaNasc > diaAtual)) {
+            idade--;
+            System.out.println("Idade: " + idade + " Anos");
+        }
+
+        //Valiação de datas
+        //Número da sorte
+        numeroSorte = 1 + (int) (Math.random() * 99);
+        System.out.println("Seu número da sorte é: " + numeroSorte);
+        //Cor sorte
+        corSorte = 1 + (int) (Math.random() * 10);
+        switch (corSorte) {
+            case 1:
+                System.out.println("Sua cor da sorte é: Azul");
+                break;
+            case 2:
+                System.out.println("Sua cor da sorte é: Amarelo");
+                break;
+            case 3:
+                System.out.println("Sua cor da sorte é: Vermelho");
+                break;
+            case 4:
+                System.out.println("Sua cor da sorte é: Verde");
+                break;
+            case 5:
+                System.out.println("Sua cor da sorte é: Rosa");
+                break;
+            case 6:
+                System.out.println("Sua cor da sorte é: Preto");
+                break;
+            case 7:
+                System.out.println("Sua cor da sorte é: Branco");
+                break;
+            case 8:
+                System.out.println("Sua cor da sorte é: Marrom");
+                break;
+            case 9:
+                System.out.println("Sua cor da sorte é: Laranja");
+                break;
+            case 10:
+                System.out.println("Sua cor da sorte é: Roxo");
+                break;
+
+        }
+        //Signo
+        if ((mesNasc == 12 && diaNasc >= 22) || (mesNasc == 1 && diaNasc <= 19)) {
+            System.out.println("Signo: Capricórnio");
+        } else if ((mesNasc == 1 && diaNasc >= 20) || (mesNasc == 2 && diaNasc <= 18)) {
+            System.out.println("Signo: Aquário");
+        } else if ((mesNasc == 2 && diaNasc >= 19) || (mesNasc == 3 && diaNasc <= 20)) {
+            System.out.println("Signo: Peixes");
+        } else if ((mesNasc == 3 && diaNasc >= 21) || (mesNasc == 4 && diaNasc <= 19)) {
+            System.out.println("Signo: Áries");
+        } else if ((mesNasc == 4 && diaNasc >= 20) || (mesNasc == 5 && diaNasc <= 20)) {
+            System.out.println("Signo: Touro");
+        } else if ((mesNasc == 5 && diaNasc >= 21) || (mesNasc == 6 && diaNasc <= 20)) {
+            System.out.println("Signo: Gêmeos");
+        } else if ((mesNasc == 6 && diaNasc >= 21) || (mesNasc == 7 && diaNasc <= 22)) {
+            System.out.println("Signo: Câncer");
+        } else if ((mesNasc == 7 && diaNasc >= 23) || (mesNasc == 8 && diaNasc <= 22)) {
+            System.out.println("Signo: Leão");
+        } else if ((mesNasc == 8 && diaNasc >= 23) || (mesNasc == 9 && diaNasc <= 22)) {
+            System.out.println("Signo: Virgem");
+        } else if ((mesNasc == 9 && diaNasc >= 23) || (mesNasc == 10 && diaNasc <= 22)) {
+            System.out.println("Signo: Libra");
+        } else if ((mesNasc == 10 && diaNasc >= 23) || (mesNasc == 11 && diaNasc <= 21)) {
+            System.out.println("Signo: Escorpião");
+        } else if ((mesNasc == 11 && diaNasc >= 22) || (mesNasc == 12 && diaNasc <= 21)) {
+            System.out.println("Signo: Sagitário");
+        } else {
+            System.out.println("Data invalída");
+        }
+
+    }
+
+}
+
