@@ -20,12 +20,11 @@ public class DesafioSigno {
         Scanner ler = new Scanner(System.in);
         DecimalFormat decimal = new DecimalFormat("0.00");
         Calendar hoje = Calendar.getInstance();
-        ///Declarar variáveis///
+        //Declarar variáveis
 
         String nome, signo;
         int sexo, diaNasc, mesNasc, anoNasc, diaAtual, mesAtual, anoAtual, idade, numeroSorte, corSorte;
 
-        ///Entrada de dados///
         //Nome     
         System.out.println("Insira seu nome:");
         nome = ler.nextLine();
@@ -54,11 +53,13 @@ public class DesafioSigno {
         mesAtual = hoje.get(Calendar.MONTH);
         anoAtual = hoje.get(Calendar.YEAR);
         idade = (anoAtual - anoNasc);
+
+        //Valiação de datas
         if (diaNasc < 1 || diaNasc > 31) {
             System.out.println("dia invalido");
             return;
         }
-
+        //Processamento data
         if (anoNasc >= anoAtual || (anoNasc == anoAtual && mesNasc > mesAtual) || anoNasc < 1900) {
             System.out.println("Data invlída");
         } else if (mesNasc > mesAtual || (mesNasc == mesAtual && diaNasc > diaAtual)) {
@@ -66,7 +67,6 @@ public class DesafioSigno {
             System.out.println("Idade: " + idade + " Anos");
         }
 
-        //Valiação de datas
         //Número da sorte
         numeroSorte = 1 + (int) (Math.random() * 99);
         System.out.println("Seu número da sorte é: " + numeroSorte);
@@ -133,6 +133,10 @@ public class DesafioSigno {
         } else {
             System.out.println("Data invalída");
         }
+
+    }
+
+}
 
     }
 
