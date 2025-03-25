@@ -65,7 +65,7 @@ public class DesafioSigno {
         } else if (mesNasc > mesAtual || (mesNasc == mesAtual && diaNasc > diaAtual)) {
             idade--;
             System.out.println("Idade: " + idade + " Anos");
-        }
+        }else{
 
         //Número da sorte
         numeroSorte = 1 + (int) (Math.random() * 99);
@@ -133,12 +133,7 @@ public class DesafioSigno {
         } else {
             System.out.println("Data invalída");
         }
-
+        }
     }
 
 }
-
-    }
-
-}
-
