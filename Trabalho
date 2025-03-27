@@ -8,21 +8,20 @@ nome, sexo, dia, mês e ano de nascimento. Com base nesses dados, o programa cal
 identificará o signo correspondente e apresentará informações personalizadas,
 como o número da sorte e a cor da sorte.
  */
-package desafiosigno;
+package javaapplication137;
 
 import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class DesafioSigno {
-
+public class JavaApplication137 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
         DecimalFormat decimal = new DecimalFormat("0.00");
         Calendar hoje = Calendar.getInstance();
         //Declarar variáveis
 
-        String nome,corSorte = null, signo = null;
+        String nome, corSorte = null, signo = null;
         int sexo, diaNasc, mesNasc, anoNasc, diaAtual, mesAtual, anoAtual, idade, numeroSorte, numCor;
 
         //Nome     
@@ -55,8 +54,8 @@ public class DesafioSigno {
         idade = (anoAtual - anoNasc);
 
         //Valiação de datas
-        if (diaNasc < 1 || diaNasc > 31) {
-            System.out.println("dia invalido");
+        if (diaNasc < 1 || diaNasc > 31 || mesNasc < 1 || mesNasc > 12) {
+            System.out.println("Data invalida");
             return;
         }
         //Processamento data
@@ -144,6 +143,5 @@ public class DesafioSigno {
               System.out.println("Sr " + nome + " Nascido em: " + "["+ diaNasc+"/"+mesNasc+"/"+anoNasc+"], é do signo de " + signo + ". Você tem "+ idade+" anos" +". Seu número da sorte é "+ numeroSorte + " e sua cor da sorte é "+ corSorte );
         
           }     
+        }
     }
-
-}
