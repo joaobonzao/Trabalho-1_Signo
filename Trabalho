@@ -2,7 +2,7 @@
     Autor: João Pedro Cassanego Reichert
     Data: 25/03/2025
     Descrição do Trabalho:      
-    Você foi contratado para desenvolver um sistema para a empresa chamada
+    -Você foi contratado para desenvolver um sistema para a empresa chamada
 "Sei de Tudo", que oferece consultoria de Zodíaco. Seu programa deve solicitar as seguintes informações do usuário:
 nome, sexo, dia, mês e ano de nascimento. Com base nesses dados, o programa calculará a idade do usuário,
 identificará o signo correspondente e apresentará informações personalizadas,
@@ -32,7 +32,7 @@ public class JavaApplication137 {
             return;
         }
         //Sexo   
-        System.out.println("Insira seu sexo (1 para Feminino e 2 para Masculino):");
+        System.out.println("Insira seu sexo (1 para Feminino e 2 para Masculino, outros números serão considerados 2.):");
         sexo = ler.nextInt();
         if (sexo < 1) {
             System.out.println("Invalído");
@@ -132,11 +132,6 @@ public class JavaApplication137 {
             System.out.println("Data invalída");
         }
         //Mensagem personalizada
-       /*
-        Exemplo para feminino: “Sra. [Nome], nascida em [dia/mês/ano], é do signo de [signo]. Você tem [idade] anos. Seu número da sorte é [número] 
-        e sua cor é [cor].” – use a mesma regra para mostrar para as pessoas do sexo masculino.
-
-        */
           if(sexo ==1){
               System.out.println("Sra " + nome + " Nascida em: " + "["+ diaNasc+"/"+mesNasc+"/"+anoNasc+"], é do signo de " + signo + ". Você tem "+ idade+" anos" +". Seu número da sorte é "+ numeroSorte + " e sua cor da sorte é "+ corSorte );
           }else{
