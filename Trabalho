@@ -61,7 +61,7 @@ public class DesafioSigno {
         }
         //Processamento data
         if (anoNasc >= anoAtual || (anoNasc == anoAtual && mesNasc > mesAtual) || anoNasc < 1900) {
-            System.out.println("Data invlída");
+            System.out.println("Data invalída");
             return;
         } else if (mesNasc > mesAtual || (mesNasc == mesAtual && diaNasc > diaAtual)) {
             idade--;
